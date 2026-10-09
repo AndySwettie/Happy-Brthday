@@ -1,0 +1,33 @@
+html,body{height:100%;margin:0}
+body{background:linear-gradient(#000a80,#c0d6ec);display:flex;align-items:center;justify-content:center;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+#stage{position:relative;width:min(100%,calc(100vh*1.778));aspect-ratio:16/9;container-type:inline-size;overflow:hidden}
+#bg{position:absolute;inset:0;width:100%;height:100%;display:block}
+#layer{position:absolute;inset:0}
+#layer>*{position:absolute}
+.hs{background:transparent;border:0;padding:0;cursor:pointer;border-radius:999px}
+.hs:hover{background:rgba(255,255,255,.12)}
+.hs:focus-visible{outline:3px solid #fff}
+.box{display:flex;align-items:center;justify-content:center;font:1.9cqw 'Alfa Slab One',serif;color:#0b0b8a}
+.pill{display:flex;align-items:center;justify-content:center;border-radius:999px;font:1.3cqw 'Alfa Slab One',serif;text-transform:uppercase;pointer-events:none}
+.good{background:#00c060;color:#000}.bad{background:#e0252b;color:#fff}
+.hint{font:800 1.05cqw/1.3 'Open Sans',sans-serif;color:#0b0b8a;text-align:center}
+.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.end{background:#9599a8;text-align:center;color:#0b0b8a;font-family:'Alfa Slab One',serif;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.end b{font-size:8cqw;font-weight:400}.end span{font-size:2.2cqw}
+canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+.cell{font:800 1.05cqw/1.3 'Open Sans',sans-serif;color:#0b0b8a;padding:.4cqw .7cqw;overflow:hidden}
+.pts{display:flex;align-items:center;font:1.7cqw 'Alfa Slab One',serif;color:#000}
+.ab{border:0;border-radius:50%;background:linear-gradient(#0b0b8a,#c0d6ec);color:#000;font-size:2.6cqw;cursor:pointer}
+.pz iframe{border:0;width:100%;height:100%;border-radius:1cqw}
+.glow{width:9cqw;height:9cqw;border-radius:50%;background:radial-gradient(circle,rgba(150,195,255,.95) 0,rgba(90,140,255,.5) 35%,transparent 70%);mix-blend-mode:screen;pointer-events:none;animation:gl 1.3s ease-in-out infinite alternate}
+@keyframes gl{from{opacity:.2;transform:scale(.75)}to{opacity:1;transform:scale(1.2)}}
+.fall{top:-3cqw;pointer-events:none;color:#1a1ab8;text-shadow:0 0 6px #8ab8ff;animation:fl linear forwards}
+@keyframes fl{to{transform:translateY(62cqw) rotate(25deg);opacity:.25}}
+.pz{display:grid;gap:2px;background:#0b0b8a;border:3px solid #0b0b8a;border-radius:1cqw;overflow:hidden}
+.pc{border:0;padding:0;cursor:pointer;background-image:url(img/puzzle.jpg);background-size:400% 300%}
+.pc.sel{outline:4px solid #38b2ff;outline-offset:-4px;filter:brightness(1.25)}
+.pc:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.pz.done{gap:0}
+.pzmsg{font:1.8cqw 'Alfa Slab One',serif;color:#0b0b8a;text-align:center}
